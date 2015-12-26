@@ -1,0 +1,271 @@
+<!--
+
+Changes made are listed here:
+
+1.  Added header content for SEO (Facebook, Twitter, etc.)
+2.  Change CSS files to CDN networks
+3.  Change JavaScript files to CDN networks
+4.  Added Spread the Word in Contact section
+5.  Added countdown timer
+6.  Wrote CSS to make countdown timer responsive on mobile
+7.  Removed all files which aren't required
+8.  Made a new footer section and added content
+9.  Made a new favicon and added it to index.html
+8.  Made the contact form responsive
+9.  Made all text and corresponding images responsive
+10. Made the countdown timer
+11. Social sharing links added
+12. Added Google Maps
+
+-->
+
+
+<!--
+
+Changes to be made before uploading on GitHub
+
+
+1. Change temp CSS files to CDN commented code
+
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="http://daksh.me/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- <link rel="alternate" type="application/rss+xml" title="Sparsh 2K16" href="#"> -->
+    <meta property="article:publisher" content="https://www.facebook.com/Sparsh.NITsurat">
+    <meta property="article:author" content="https://www.facebook.com/Sparsh.NITsurat">
+    <meta property="twitter:account_id" content="1510093219">
+    <meta property="fb:app_id" content="742982012513422" />
+    <title>Sparsh 2K16 - SVNIT</title>
+    <meta name="description" content="Sparsh is SVNIT's annual techno-cultural fest and the largest of its kind in Gujarat.">
+    <meta name="robots" content="noodp">
+    <link rel="canonical" href="http://svnit-sparsh.net">
+    <meta property="description" content="Sparsh is SVNIT's annual techno-cultural fest and the largest of its kind in Gujarat.">
+
+    <meta property="og:site_name" content="Sparsh 2K16">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Sparsh is SVNIT's annual techno-cultural fest and the largest of its kind in Gujarat.">
+    <meta property="og:url" content="http://svnit-sparsh.net">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="temp/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+
+    <!-- Theme & Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- jQuery 1.10.2 (Compatible with countdown timer - DO NOT change order of scripts) -->
+    <!-- <script src="temp/jquery.min.js"></script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Flip Clock JavaScript -->
+    <script src="js/flipclock-custom.js"></script>
+
+    <!-- Google Webfont Loader -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js" async></script>
+    <script>
+      WebFontConfig = {
+        google: {
+        families: ['Roboto:regular,bold,light:latin']
+        }
+      };
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">SPARSH</span> 2K16
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#page-top">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+       <video autoplay loop id="video-background" muted>
+  <source src="1.mp4" type="video/mp4">
+</video>
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <a href="http://svnit-sparsh.net"><img alt="Sparsh 2K16 - SVNIT" class="img-responsive" style="width: 350px; height: 317px; margin: 0 auto;" src="img/sparsh-logo.png"></a>
+                        <p class="intro-text">Sparsh is SVNIT's annual techno-cultural fest and the largest of its kind in Gujarat.</p>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-3 clock-col">
+                    <div style="margin: 2em 0 2em 0;" class="clock"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- JavaScript to manage the countdown timer -->
+    <script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the future. In this case, it's always Jan 1
+				var futureDate  = new Date("2016-02-20");
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+				});
+			});
+		</script>
+
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Sparsh</h2>
+            </div>
+          </div>
+          <div style="margin-top: 50px;" class="row">
+            <div class="col-xs-6 sparsh-info-about">
+                <p>Sparsh is the annual techno-cultural festival of Sardar Vallabhbhai National Institute of Technology. It usually takes place in the second or third week of February, and is one of the largest of its kind in the western Region. This five-day festival consists of mega-attractions as well as informal, technical & managerial events among numerous other competitions.</p>
+            </div>
+            <div class="col-xs-6">
+              <a href="http://svnit-sparsh.net"><img class="sparsh-logo-about" alt="Sparsh 2K16 - SVNIT" style="width: 280px; height: 253.6px; margin: 0 auto;" src="img/sparsh-logo.png"></a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Spread the Word About Sparsh</h2>
+                    <p>Want to invite your friends to Sparsh? Spread the word!</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://www.facebook.com/dialog/feed?app_id=134530986736267&link=http%3A%2F%2Fwww.svnit-sparsh.net&description=Hey%2C+Gujarat%27s+biggest+techno-cultural+fest+is+just+around+the+corner.+Visit+svnit-sparsh.net+now%21+%23Sparsh2k16&redirect_uri=http://facebook.com/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/intent/tweet?original_referer=http://svnit-sparsh.net/&source=tweetbutton&text=Hey,%20Gujarat's%20biggest%20techno-cultural%20is%20just%20around%20the%20corner.%20%23Sparsh2k16&url=http://svnit-sparsh.net/&via=Sparsh_SVNIT" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i></a>
+                        </li>
+                        <li>
+                            <a href="mailto:?subject=Sparsh%202k16&body=Hey%2C%20Gujarat%27s%20biggest%20techno-cultural%20is%20just%20around%20the%20corner.%20Visit%20svnit-sparsh.net%20now%21%20" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Contact Us</h2>
+                <p>Feel free to provide some feedback on our events, give us suggestions for new ones, or to just say hello!</p>
+                <p>You can get in touch with us using the form below, through our Facebook page or just by dropping an email at <br><a href="mailto:example@svnit-sparsh.net">example@svnit-sparsh.net</a></p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://www.facebook.com/Sparsh.NITsurat" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Sparsh on Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter/Sparsh_SVNIT" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Sparsh on Twitter</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+               <div class="typeform-widget" data-url="https://daksh2.typeform.com/to/Vlak4x" data-text="Basic Contact Form" style="width:100%;height:340px;"></div>
+               <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2" style="margin-top: 50px;">
+              <iframe width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCz8rjo-ZHL9xrmy7CNpLimwnZsZUT-K9U&q=Sardar+Vallabhbhai+National+Institute+of+Technology,Ichchhanath,+Surat,+Gujarat" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-sparsh text-center">
+            <p><i class="fa fa-code"></i> with <i style="color: red;" class="fa fa-heart faa-pulse animated"></i> and a lot of <i class="fa fa-coffee"></i> by the WebDev Committee</p>
+            <p style="margin-top: 5px;">&copy; WebDev Committee 2015. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="temp/bootstrap.js"></script>
+
+    <!-- *********** ASYNCHRONOUS SCRIPTS (Load only after page load) *********** -->
+
+    <script type="text/javascript">
+      function downloadJSAtOnload() {
+      var element = document.createElement("script");
+      element.src = "js/custom.js";
+      document.body.appendChild(element);
+      }
+      if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+    </script>
+
+
+</body>
+
+</html>
